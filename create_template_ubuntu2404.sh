@@ -34,7 +34,7 @@ qm create $VMID \
 qm importdisk $VMID $IMAGE_NAME $STORAGE
 qm set $VMID \
   --scsihw virtio-scsi-pci \
-  --virtio0 ${STORAGE}:vm-${VMID}-disk-1,discard=on,ssd=1
+  --virtio0 ${STORAGE}:vm-${VMID}-disk-1,discard=on
 
 qm set $VMID --boot order=virtio0
 qm set $VMID --ide2 ${STORAGE}:cloudinit
